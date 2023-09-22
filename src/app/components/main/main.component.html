@@ -1,0 +1,7 @@
+
+<div id="top"></div>
+<div class="card-row">
+    <app-card *ngFor="let char of characters" class="card-container" [characterData]="char"></app-card>
+  </div>
+  <button (click)="prevPage()">Indietro</button>
+  <button (click)="nextPage()">avanti</button>
