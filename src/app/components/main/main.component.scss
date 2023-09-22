@@ -1,0 +1,28 @@
+.card-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.button-page-container{
+    position: fixed;
+    bottom: 10px;
+    border:none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+}
+
+.button-page-container button{
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    font-family: 'Poppins';
+    font-size: 20px;
+
+}

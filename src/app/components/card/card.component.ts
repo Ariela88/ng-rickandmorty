@@ -13,4 +13,7 @@ export class CardComponent {
   @Output() spellSelected= new EventEmitter<Character>()
 
 
+  
+
+
 }
