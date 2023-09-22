@@ -13,7 +13,7 @@ export class CardComponent {
   @Output() charSelected= new EventEmitter<Character>()
 
 
-  select(){
+  select(char:number){
     this.charSelected.emit(this.characterData)
     console.log(this.characterData)
   }

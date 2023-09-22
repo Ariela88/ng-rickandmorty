@@ -15,12 +15,15 @@ export class DetailsComponent implements OnInit{
 
 
   ngOnInit(): void {
-    const charIndex = +this.route.snapshot.paramMap.get('index') ?? 0; 
+    const charIndex = +this.route.snapshot.paramMap.get('index')!;
     if (!isNaN(charIndex)) {
       this.connection
         .getCharWithIndex(charIndex)
         .subscribe({
-          next: (detail) => this.characterDetails = detail,
+          next: (detail) => {
+            this.characterDetails = detail;
+            console.log(detail); 
+          },
           error: (error) => console.log(error),
         });
     }
