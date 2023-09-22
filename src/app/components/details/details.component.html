@@ -1,0 +1,14 @@
+<div class="details-card-page" *ngIf="characterDetails"> 
+
+<h1>{{characterDetails.name}} </h1>
+
+<div *ngIf="characterDetails.episode && characterDetails.episode.length > 0">
+    
+    
+    <ul>
+        <li *ngFor="let item of characterDetails.episode">{{ item }}</li>
+      </ul>
+      
+    </div>
+
+</div>

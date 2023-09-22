@@ -1,23 +1,21 @@
 <div class="card" *ngIf="characterData">
-
     <div class="img-char">
-        <img src="{{characterData.image}}">
+      <img src="{{ characterData.image }}">
     </div>
-
-    <div class="card-content"> 
-    <div class="card-header">
-        <h3 class="card-name">{{characterData.name}}</h3>
+    <div class="card-content">
+      <div class="card-header">
+        <button  (click)="select()">
+          <h3 class="card-name">{{ characterData.name }}</h3>
+        </button>
         <span [ngClass]="{'is-alive': characterData.status === 'Alive', 'is-not-alive': characterData.status === 'Dead'}"></span>
-       <span class="subtitle">  {{characterData.status}} - {{characterData.species}}</span>
-
+        <span class="subtitle">{{ characterData.status }} - {{ characterData.species }}</span>
+      </div>
+      <div class="detail-char">
+        <span class="light-text">Genere:</span>
+        <span class="bold-text">{{ characterData.gender }}</span>
+        <span class="light-text">Ultima posizione conosciuta:</span>
+        <span class="bold-text">{{ characterData.location.name }}</span>
+      </div>
     </div>
-
-    <div class="detail-char">
- 
-        <span class="light-text"> Genere: </span>  <span class="bold-text">{{characterData.gender}}</span>
-
-        <span class="light-text"> Ultima posizione conosciuta: </span> <span class="bold-text"> {{ characterData.location.name }}</span>
-
-    </div>
-</div>
-</div>
+  </div>
+  

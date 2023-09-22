@@ -36,5 +36,10 @@ export class ConnectionService {
     
   }
 
+  getCharWithIndex(charIndex: number) {
+    const url = `${this.apiUrl}/${charIndex}`;
+    return this.http.get<Character>(url);
+  }
+
   
 }

@@ -2,7 +2,7 @@
 
 <div id="top"></div>
 <div class="card-row">
-    <app-card *ngFor="let char of characters" class="card-container" [characterData]="char"></app-card>
+    <app-card *ngFor="let char of characters" class="card-container" [characterData]="char" (charSelected)="openDetails($event)"></app-card>
   </div>
   <div class="button-page-container"> 
   <button (click)="prevPage()">Indietro</button>

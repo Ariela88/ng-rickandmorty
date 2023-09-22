@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Character } from 'src/app/model/character';
 import { ConnectionService } from 'src/app/service/connection.service';
 import { StorageService } from 'src/app/service/storage.service';
@@ -13,7 +14,7 @@ export class MainComponent {
   characters: Character[] = [];
   currentPage = 1;
 
-  constructor(private storage: StorageService, private connection: ConnectionService) {}
+  constructor(private storage: StorageService, private connection: ConnectionService, private route:Router) {}
 
   ngOnInit(): void {
     this.getCharacterData(this.currentPage);
@@ -36,9 +37,13 @@ export class MainComponent {
   private getCharacterData(page: number) {
     this.connection.getCharacterByPage(page).subscribe(result => {
       this.characters = result;
-      for (const character of this.characters) {
-        character.isFavourite = this.storage.isFavourite(character);
-      }
+      
     });
   }
+
+  openDetails(char:Character){
+
+    this.route.navigateByUrl('/details/' + char.id)
+    
+      }
 }

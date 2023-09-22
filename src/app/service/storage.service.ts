@@ -23,7 +23,7 @@ export class StorageService {
   }
 
   saveCharacter(Character: Character) {
-    Character.isFavourite = true;
+    
     const actualArray = this.favouritesSubject.value
     const newArray = [...actualArray, Character]
     this.favouritesSubject.next(newArray)
@@ -32,28 +32,15 @@ export class StorageService {
   }
 
   removeCharacter(character: Character) {
-    character.isFavourite = false;
+    
     const actualArray = this.favouritesSubject.value
     const newArray = actualArray.filter((p) => p.id !== character.id);
     this.favouritesSubject.next(newArray)
     localStorage.setItem('favourites', JSON.stringify(newArray));
   }
 
-  toggleFavourites(character: Character) {
-    if (this.isFavourite(character)) {
-      this.removeCharacter(character)
-
-    } else {
-      this.saveCharacter(character)
-    }
-  }
+  
 
 
-  isFavourite(Character: Character): boolean {
-
-
-     return this.favouritesSubject.value.some(p => p.id === Character.id)
-
-
-  }
+  
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
     MainComponent,
     CardComponent,
     HeaderComponent,
+    DetailsComponent,
     
   ],
   imports: [

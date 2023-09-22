@@ -9,11 +9,14 @@ import { Character } from 'src/app/model/character';
 export class CardComponent {
 
   @Input() characterData?:Character;
-  @Input() isFavourites:boolean = false
-  @Output() spellSelected= new EventEmitter<Character>()
-
-
   
+  @Output() charSelected= new EventEmitter<Character>()
+
+
+  select(){
+    this.charSelected.emit(this.characterData)
+    console.log(this.characterData)
+  }
 
 
 }

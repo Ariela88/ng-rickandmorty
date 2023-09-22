@@ -6,7 +6,7 @@
     display: flex;
   padding: 0;
     justify-content: center;
-    height: 240px;
+    height: 230px;
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
     padding-right: 8px;
@@ -22,7 +22,7 @@ li{
 .img-char{
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 220px;
     flex: 1;
     
 
@@ -94,3 +94,6 @@ h3{
     flex-direction: column;
   }
   
+  a{
+    cursor: pointer;
+  }
