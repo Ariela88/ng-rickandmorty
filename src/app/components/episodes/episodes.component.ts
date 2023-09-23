@@ -4,6 +4,7 @@ import { Episode } from 'src/app/model/episode';
 import { ConnectionService } from 'src/app/service/connection.service';
 import { SharedService } from 'src/app/service/shared.service';
 import { Router } from '@angular/router';
+import { Character } from 'src/app/model/character';
 
 @Component({
   selector: 'app-episodes',
@@ -14,6 +15,7 @@ export class EpisodesComponent implements OnInit {
 
   episodeDetails: Episode | null = null;
   episodeData: Episode[] = []
+  characters?:Character
 
   constructor(
     private route: ActivatedRoute,

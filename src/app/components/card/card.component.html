@@ -7,9 +7,11 @@
         <button  (click)="select()">
           <h3 class="card-name">{{ characterData.name }}</h3>
         </button>
+        <div class="states"> 
         <span [ngClass]="{'is-alive': characterData.status === 'Alive', 'is-not-alive': characterData.status === 'Dead'}"></span>
         <span class="subtitle">{{ characterData.status }} - {{ characterData.species }}</span>
       </div>
+    </div>
       <div class="detail-char">
         <span class="light-text">Genere:</span>
         <span class="bold-text">{{ characterData.gender }}</span>

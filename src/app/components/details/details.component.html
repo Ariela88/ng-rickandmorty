@@ -22,10 +22,9 @@
   <div *ngIf="episodes && episodes.length > 0">
     <ul>
       <li *ngFor="let episode of episodes">
-        <a [routerLink]="['/episode', episode.id]">{{ episode.name }}</a>
-
        
-      </li>
+        <a [routerLink]="['/episode', episode.id]" (click)="select(episode)">{{ episode.name }}</a>
+ </li>
     </ul>
   </div>
   
