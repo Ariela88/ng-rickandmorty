@@ -1,16 +1,13 @@
 <div class="details-card-page" *ngIf="episodeDetails">
-    <h1>{{ episodeDetails.name }}</h1>
-    <p>Air Date: {{ episodeDetails.air_date }}</p>
-    <p>Episode: {{ episodeDetails.episode }}</p>
-
-    <!-- <div *ngIf="char && char.length > 0">
-      <ul>
-        <li *ngFor="let episode of episodes">
-         
-          <a [routerLink]="['/episode', episode.id]" (click)="select(episode)">{{ episode.name }}</a>
-   </li>
-      </ul>
-    </div> -->
-   
-  </div>
+  <h1>{{ episodeDetails.name }}</h1>
+  <p>Air Date: {{ episodeDetails.air_date }}</p>
+  <p>Episode: {{ episodeDetails.episode }}</p>
   
+  <div *ngIf="characters && characters.length > 0">
+    <ul>
+      <li *ngFor="let character of characters">
+        <a [routerLink]="['/details/', character.id]">{{ character.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
