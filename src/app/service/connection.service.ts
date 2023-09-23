@@ -2,44 +2,33 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Character } from '../model/character';
+import { Episode } from '../model/episode';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConnectionService {
+  selectedCharacter = '';
+  apiUrl = `https://rickandmortyapi.com/api/`;
 
- 
-
-  selectedCharacter = ''
-  apiUrl = `https://rickandmortyapi.com/api/character`
- 
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCharacterByPage(page: number): Observable<Character[]> {
-    const url = `${this.apiUrl}/?page=${page}`;
-    return this.http.get<any>(url).pipe(
-      map(response => response.results)
-    );
+    const url = `${this.apiUrl + 'character'}/?page=${page}`;
+    return this.http.get<any>(url).pipe(map((response) => response.results));
   }
 
   getCharacterNext(): Observable<Character[]> {
-    
-
-    return this.http.get<any>('https://rickandmortyapi.com/api/character/?page="' + 5 ).pipe(
-      map(response => response.results)
-     
-      
-
-    );
-
-    
+    return this.http
+      .get<any>('https://rickandmortyapi.com/api/character/?page="' + 5)
+      .pipe(map((response) => response.results));
   }
 
   getCharWithIndex(charIndex: number) {
-    const url = `${this.apiUrl}/${charIndex}`;
-    return this.http.get<Character>(url);
+    return this.http.get<Character>(this.apiUrl+'character/' + charIndex);
   }
-
-  
+ 
+  getEpisodeById(episodeId: number) {
+    return this.http.get<Episode>(this.apiUrl + 'episode/' + episodeId);
+  }
 }

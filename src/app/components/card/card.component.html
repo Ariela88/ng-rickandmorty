@@ -4,7 +4,7 @@
     </div>
     <div class="card-content">
       <div class="card-header">
-        <button  (click)="select(characterData.id)">
+        <button  (click)="select()">
           <h3 class="card-name">{{ characterData.name }}</h3>
         </button>
         <span [ngClass]="{'is-alive': characterData.status === 'Alive', 'is-not-alive': characterData.status === 'Dead'}"></span>
@@ -14,7 +14,7 @@
         <span class="light-text">Genere:</span>
         <span class="bold-text">{{ characterData.gender }}</span>
         <span class="light-text">Ultima posizione conosciuta:</span>
-        <span class="bold-text">{{ characterData.location.name }}</span>
+        <span *ngIf="characterData.location" class="bold-text">{{ characterData.location.name }}</span>
       </div>
     </div>
   </div>

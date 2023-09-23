@@ -7,6 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DetailsComponent } from './components/details/details.component';
+import { EpisodesComponent } from './components/episodes/episodes.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { DetailsComponent } from './components/details/details.component';
     CardComponent,
     HeaderComponent,
     DetailsComponent,
+    EpisodesComponent,
     
   ],
   imports: [

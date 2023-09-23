@@ -1,14 +1,34 @@
-<div class="details-card-page" *ngIf="characterDetails"> 
+<div class="details-card-page" *ngIf="characterDetails" (charSelected)="($event)">
 
-<h1>{{characterDetails.name}} </h1>
+  <div class="img-char">
+    <img src="{{ characterDetails.image }}">
+  </div>
+  <div class="card-content">
+    <div class="card-header">
 
-<div *ngIf="characterDetails.episode && characterDetails.episode.length > 0">
-    
-    
-    <ul>
-        <li *ngFor="let item of characterDetails.episode">{{ item }}</li>
-      </ul>
-      
+      <h3 class="card-name">{{ characterDetails.name }}</h3>
+
+      <span
+        [ngClass]="{'is-alive': characterDetails.status === 'Alive', 'is-not-alive': characterDetails.status === 'Dead'}"></span>
+      <span class="subtitle">{{ characterDetails.status }} - {{ characterDetails.species }}</span>
     </div>
+    <div class="detail-char">
+      <span class="light-text">Genere:</span>
+      <span class="bold-text">{{ characterDetails.gender }}</span>
+      <span class="light-text">Ultima posizione conosciuta:</span>
+      <span class="bold-text">{{ characterDetails.location }}</span>
+    </div>
+  </div>
+  <div *ngIf="episodes && episodes.length > 0">
+    <ul>
+      <li *ngFor="let episode of episodes">
+        <a [routerLink]="['/episode', episode.id]">{{ episode.name }}</a>
 
+       
+      </li>
+    </ul>
+  </div>
+  
+  
+  
 </div>
