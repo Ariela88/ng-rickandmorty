@@ -121,3 +121,30 @@ h3{
     color: yellow;
     cursor: pointer;
   }
+
+  @media(max-width:500px){
+
+    .card{
+      width: 100%;
+      gap: 8px;
+      
+    }
+
+    .card-name{
+      font-size: 16px;
+    }
+
+    .light-text{
+      font-size: 12px;
+      font-weight: 100;
+    }
+  
+    .bold-text{
+      font-size: 16px;
+      
+    }
+
+    img{
+      width: 180px;
+    }
+  }

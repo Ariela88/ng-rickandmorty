@@ -1,5 +1,8 @@
+
+<div class="main-details"> 
 <div class="details-card-page" *ngIf="characterDetails" (charSelected)="($event)">
 
+  
   <div class="img-char">
     <img src="{{ characterDetails.image }}">
   </div>
@@ -13,13 +16,21 @@
       <span class="subtitle">{{ characterDetails.status }} - {{ characterDetails.species }}</span>
     </div>
     <div class="detail-char">
-      <span class="light-text">Genere:</span>
+      <div class="gender">
+      <span class="light-text">Genere:  </span>
       <span class="bold-text">{{ characterDetails.gender }}</span>
-      <span class="light-text">Ultima posizione conosciuta:</span>
-      <span class="bold-text">{{ characterDetails.location }}</span>
+    </div>
+    <div class="location"> 
+      <span class="light-text">Ultima posizione conosciuta:     </span>
+      <span class="bold-text" *ngIf="characterDetails.location">    {{ characterDetails.location.name }}</span>
     </div>
   </div>
+  </div>
+
+  
   <div *ngIf="episodes && episodes.length > 0">
+
+    <div class="episodes"> Episodi in cui è presente:  </div>
     <ul>
       <li *ngFor="let episode of episodes">
        
@@ -30,4 +41,5 @@
   
   
   
+</div>
 </div>
