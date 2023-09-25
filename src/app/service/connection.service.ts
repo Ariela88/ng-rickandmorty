@@ -18,17 +18,16 @@ export class ConnectionService {
     return this.http.get<any>(url).pipe(map((response) => response.results));
   }
 
-  getCharacterNext(): Observable<Character[]> {
-    return this.http
-      .get<any>('https://rickandmortyapi.com/api/character/?page="' + 5)
-      .pipe(map((response) => response.results));
-  }
+
 
   getCharWithIndex(charIndex: number) {
     return this.http.get<Character>(this.apiUrl+'character/' + charIndex);
   }
- 
+
   getEpisodeById(episodeId: number) {
     return this.http.get<Episode>(this.apiUrl + 'episode/' + episodeId);
+  }
+  getEpisodeByLoc(location: string) {
+    return this.http.get<Location>(this.apiUrl + 'episode/' + location);
   }
 }

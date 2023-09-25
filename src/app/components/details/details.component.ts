@@ -15,6 +15,7 @@ export class DetailsComponent implements OnInit {
   characterDetails?: Character;
   episodes?: Episode[];
   @Input() episodeData?: Episode;
+  @Input() locationData?: Location;
 
   constructor(
     public connection: ConnectionService,

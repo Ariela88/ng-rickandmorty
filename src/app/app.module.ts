@@ -8,6 +8,7 @@ import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DetailsComponent } from './components/details/details.component';
 import { EpisodesComponent } from './components/episodes/episodes.component';
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EpisodesComponent } from './components/episodes/episodes.component';
     HeaderComponent,
     DetailsComponent,
     EpisodesComponent,
+    LocationComponent,
     
   ],
   imports: [

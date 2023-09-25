@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'episode/:id', component: EpisodesComponent },
   { path: 'details/:id', component: DetailsComponent },
   { path: '', component: MainComponent },
+  { path: 'character', loadChildren: () => import('./character/character.module').then(m => m.CharacterModule) },
   { path: '**', component: MainComponent },
 ];
 

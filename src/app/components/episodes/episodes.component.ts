@@ -26,22 +26,7 @@ export class EpisodesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.sharedService.selectedEpisode$.subscribe(
-    //   (episode: Episode | null) => {
-    //     if (episode) {
-    //       this.episodeDetails = episode;
-    //     } else {
-    //       this.episodeDetails = null; 
-    //       console.log("Nessun episodio trovato.");
-    //     }
-    //   },
-    //   (error) => {
-    //     console.log("Errore nel recupero dell'episodio:", error);
-    //   },
-    //   () => {
-    //     console.log("Completato"); 
-    //   }
-    // );
+
     const episodeIndex = parseInt(
       this.route.snapshot.paramMap.get('id') || '0',
       10
@@ -72,8 +57,6 @@ export class EpisodesComponent implements OnInit {
               error: (error) => console.log(error),
             });
           }
-
-          // console.log(charDetail);
         },
         error: (error) => console.log(error),
       });
